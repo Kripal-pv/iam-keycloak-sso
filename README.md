@@ -2,61 +2,47 @@
 
 ## 📌 Overview
 This project demonstrates Identity and Access Management (IAM) using Keycloak.  
-It implements Single Sign-On (SSO) so users can log in once and access applications securely.
+It enables secure authentication using Single Sign-On (SSO).
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 - Keycloak
 - Docker
-- Flask (Python)
+- Flask
 - OpenID Connect (OIDC)
 
 ---
 
-# 📅 Week 1 – Identity Setup
-
-## ✔ Tasks
-- Installed Keycloak using Docker
+## 📅 Week 1 – Identity Setup
+- Installed Keycloak
 - Created Realm (Infotact)
 - Created Users and Roles
-- Assigned roles to user
-- Verified login
+- Assigned roles
 
 ## 📸 Screenshots
-
-### 🔹 Realm Creation
 ![Realm](screenshots/week1-realm.png)
-
-### 🔹 User & Role Setup
 ![User](screenshots/week1-user.png)
 
 ---
 
-# 📅 Week 2 – SSO Integration
-
-## ✔ Tasks
-- Created OIDC Client (my-app)
+## 📅 Week 2 – SSO Integration
+- Created OIDC client (my-app)
 - Configured redirect URIs
-- Developed Flask app
-- Implemented login redirection
-- Received authorization code
+- Built Flask app
+- Implemented SSO login
 
-## 🔄 Authentication Flow
+## 🔄 Flow
 User → App → Keycloak → Login → Redirect → App
 
 ## 📸 Screenshots
-
-### 🔹 Keycloak Login
 ![Login](screenshots/week2-login.png)
-
-### 🔹 Flask App Output
 ![Output](screenshots/week2-output.png)
 
 ---
 
-## 🚀 How to Run
+## 🚀 Run Project
 
-### 1. Start Keycloak
 ```bash
 docker-compose up -d
+python3 app.py
