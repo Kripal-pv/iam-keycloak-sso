@@ -1,0 +1,4 @@
+- App redirects user to Keycloak for login
+- Keycloak verifies user credentials
+- After login, user is redirected back
+- Authorization code is received
