@@ -1,48 +1,91 @@
-# 🔐 IAM System using Keycloak (SSO)
+# 🔐 IAM System using Keycloak (SSO, MFA & Security)
 
-## 📌 Overview
-This project demonstrates Identity and Access Management (IAM) using Keycloak.  
-It enables secure authentication using Single Sign-On (SSO).
+## 📌 Project Overview
+This project demonstrates the implementation of an Identity and Access Management (IAM) system using Keycloak. It includes secure authentication, Single Sign-On (SSO), Multi-Factor Authentication (MFA), JWT validation, and security monitoring.
 
 ---
 
-## 🛠️ Technologies
-- Keycloak
+## 🛠️ Technologies Used
+- Keycloak (IAM)
+- Flask (Python)
 - Docker
-- Flask
 - OpenID Connect (OIDC)
+- JWT (JSON Web Token)
+- Kali Linux
 
 ---
 
-## 📅 Week 1 – Identity Setup
-- Installed Keycloak
+## 📅 Project Breakdown
+
+### 🔹 Week 1 – Identity Setup
+- Installed Keycloak using Docker
 - Created Realm (Infotact)
 - Created Users and Roles
-- Assigned roles
-
-## 📸 Screenshots
-![Realm](screenshots/week1-realm.png)
-![User](screenshots/week1-user.png)
+- Assigned roles to users
 
 ---
 
-## 📅 Week 2 – SSO Integration
+### 🔹 Week 2 – SSO Integration
 - Created OIDC client (my-app)
 - Configured redirect URIs
-- Built Flask app
-- Implemented SSO login
-
-## 🔄 Flow
-User → App → Keycloak → Login → Redirect → App
-
-## 📸 Screenshots
-![Login](screenshots/week2-login.png)
-![Output](screenshots/week2-output.png)
+- Developed Flask application
+- Implemented login redirection
+- Received authorization code
 
 ---
 
-## 🚀 Run Project
+### 🔹 Week 3 – MFA & JWT Validation
+- Enabled OTP-based MFA
+- Configured user authentication flow
+- Generated Access Token (JWT)
+- Decoded JWT using jwt.io
+- Verified:
+  - Username
+  - Roles
+  - Client ID
+  - Scope
 
+---
+
+### 🔹 Week 4 – Logging & Security Testing
+- Enabled user event logging
+- Captured login, logout, and login failure events
+- Verified event logs
+- Performed security testing:
+  - Open Redirect protection
+  - Session handling validation
+
+---
+
+## 🔄 Authentication Flow
+
+User → Application → Keycloak → Login → Redirect → Application → Access Granted
+
+---
+
+## 🔐 Key Features
+
+- Centralized Authentication (IAM)
+- Single Sign-On (SSO)
+- Multi-Factor Authentication (MFA)
+- JWT-based Authorization
+- Role-Based Access Control (RBAC)
+- Event Logging & Monitoring
+- Basic Security Testing
+
+---
+
+## 📸 Screenshots
+
+- Keycloak Setup (Week 1)
+- Login & SSO Flow (Week 2)
+- OTP & JWT Verification (Week 3)
+- Event Logs & Security Tests (Week 4)
+
+---
+
+## 🚀 How to Run
+
+### 1. Start Keycloak
 ```bash
 docker-compose up -d
-python3 app.py
